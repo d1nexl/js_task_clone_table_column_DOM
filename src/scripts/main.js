@@ -8,13 +8,13 @@ function clone(indexClone, insertIndex) {
   for (const row of rows) {
     const cellClone = row.cells[indexClone];
 
-    if (!clone) {
+    if (!cellClone) {
       continue;
     }
 
     const cloneCell = cellClone.cloneNode(true);
 
-    row.insertIndex(cloneCell, row.cells[insertIndex]);
+    row.insertBefore(cloneCell, row.cells[insertIndex]);
   }
 }
 
